@@ -1,0 +1,166 @@
+h1,h2,h4,p,li{
+    font-family: 'Akaya Telivigala', cursive;
+    text-align: justify;
+    letter-spacing: 0.4px;
+    line-height: 32px;
+}
+
+p{
+    font-size: 20px;
+}
+
+li{
+    font-size: 16px;
+}
+
+//buy me coffee
+//variables
+$bg-color: #EFB339; //icon container background-color
+$accent-color: #870058; //accent bright color
+$dark-coffee: #49362F; //dark coffee color
+$light-coffee: #F4E9D7; //light coffee cup color
+$light-coffee-2: #f4f4f4; //light coffee color
+$middle-coffee: #987B53; //not very dark coffee color
+$milk-coffee: #fff; //milk and cream color
+
+//mixins
+@mixin position-absolute ($position: absolute, $top: null, $left: null, $right: null, $bottom: null) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+//main styles !!! You need them
+.coffee-icon {
+  width: 25px;
+  position: relative;
+}
+
+//coffee-1 styles
+.coffee-icon-1 {
+  height: 40px;
+  
+  //coffee top part
+  @keyframes coffee-animation {
+    0% {
+      transform: rotate(0deg);
+      top: 0;
+    }
+    
+    40% {
+      transform: rotate(0deg);
+      top: 0;
+    }
+    
+    60% {
+      transform: rotate(-15deg);
+      top: 2px;
+    }
+    
+    100% {
+      transform: rotate(-15deg);
+      top: 2px;
+    }
+  }
+  
+  .coffee-top {
+    @include position-absolute($top: 0, $left: 0);
+    width: 100%;
+    height: 6.5px;
+    transform-origin: left bottom;
+    animation: coffee-animation 2.2s linear 0s infinite alternate;
+    
+    //top of the coffee top part
+    &:before {
+      content: "";
+      display: block;
+      @include position-absolute($top: 0, $left: 0, $right: 0);
+      width: 65%;
+      margin: auto;
+      height: 0px;
+      border-bottom: 3.125px solid lighten($dark-coffee, 10%);
+      border-right: 1.875px solid transparent;
+      border-left: 1.875px solid transparent;
+    }
+    
+    //bottom of the coffee top part
+    &:after {
+      content: "";
+      display: block;
+      @include position-absolute($bottom: 0, $left: 0);
+      width: 100%;
+      height: 4.25px;
+      background-color: $dark-coffee;
+      border-radius: 2px;
+    }
+  }
+  
+  //coffee body part
+  .coffee-body {
+    @include position-absolute($top: 7.5px, $left: 0);
+    width: 100%;
+    height: 25px;
+    
+    //main part of coffee body
+    &:before {
+      content: "";
+      display: block;
+      width: calc(87% - 1.75px);
+      @include position-absolute($top: 0, $left: 0, $right: 0);
+      margin: auto;
+      border-bottom: 22.5px solid $light-coffee;
+      border-left: 3.25px solid transparent;
+      border-right: 3.25px solid transparent;
+      transform: rotate(180deg);
+    }
+    
+    //additional part of coffee body
+    &:after {
+      content: "";
+      display: block;
+      @include position-absolute($top: 4.5px, $left: 0, $right: 0);
+      width: 73%;
+      margin: auto;
+      border-bottom: 11.25px solid $middle-coffee;
+      border-left: 1.5px solid transparent;
+      border-right: 1.5px solid transparent;
+      transform: rotate(180deg);
+    }
+  }
+}
+//buy me coffee ends
+.letstalk_contributors{
+  padding:10px;
+  margin-left: 90px;
+}
+
+.letstalk-about-title{
+  color:orangered;
+  font-size: 45px;
+}
+
+
+
+
+@media screen and (max-width: 767px) {  
+  .letstalk_contributors{
+    margin: 0px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .letstalk_contributors{
+    margin: 0px;
+    margin-top: 50px;
+  }
+}

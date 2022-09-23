@@ -1,0 +1,82 @@
+.signUpFormStyle{
+    border: 1px #F4F6FC solid;
+    margin: 10px 300px 10px 300px;
+    height: auto;
+    padding: 25px;
+    font-weight: bold;
+}
+
+h2{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    font-family: "Akaya Telivigala", cursive;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+p{
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {  
+    .signUpFormStyle{
+        margin: 0px;
+        height: auto;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    h2{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: "Akaya Telivigala", cursive;
+        font-size: 24px;
+    }
+    textarea{
+        width: 94%;
+    }
+
+    label{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    button{
+        width: 150px;
+    }
+
+    .btn-class{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .signUpFormStyle{
+        margin: 0px;
+        height: auto;
+        padding: 10px;
+        font-weight: bold;
+    }
+    h2{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: "Akaya Telivigala", cursive;
+        font-size: 24px;
+    }
+    textarea{
+        width: 94%;
+    }
+    label{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    button{
+        width: 150px;
+    }
+    .btn-class{
+        display: block;
+    }
+}

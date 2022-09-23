@@ -1,0 +1,36 @@
+<form class="form signUpFormStyle" action="" [formGroup]="contactUsForm" (ngSubmit)="onSubmitSignUpForm()">
+    <h2>Contact Us</h2>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <label for="name" class="label">Name:</label>
+            <input type="text" id="name" formControlName="name" class="form-control form-control-sm"
+                style="cursor: not-allowed;">
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="label">Email:</label>
+            <input type="email" id="email" formControlName="email" class="form-control form-control-sm"
+                style="cursor: not-allowed;">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <label for="context" class="label">Context:</label>
+            <input type="text" id="context" formControlName="context" class="form-control form-control-sm"
+                placeholder="provide context">
+        </div>
+        <div class="col-md-6">
+            <label for="subject" class="label">Subject:</label>
+            <input type="text" id="subject" formControlName="subject" class="form-control form-control-sm"
+                placeholder="Select subject">
+        </div>
+    </div>
+    <div class="row mt-3" style="margin-left: 0px;">
+        <label for="message">Message:</label>
+        <textarea class="form-control" width="98%" id="message" cols="10" rows="5" formControlName="message"
+            placeholder="write your questions here"></textarea>
+    </div>
+    <div class="row mt-3 btn-class">
+        <button type="submit" class="btn btn-primary ml-3">Send message</button>
+        <button type="button" class="btn btn-warning ml-3" (click)="onReset()">Reset</button>
+    </div>
+</form>

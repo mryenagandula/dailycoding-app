@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+@media screen and (max-width: 767px) {
+    .row {
+        width: 100%;
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    [class*="col-md-"] {
+        width: 100%;
+    }
+
+    mat-table {
+        overflow-x: auto;
+    }
+
+    mat-header-cell,
+    mat-cell {
+        min-width: 150px;
+    }
+
+    mat-sidenav {
+        width: 80% !important;
+    }
+
+    mat-sidenav-content {
+        .container {
+            margin: 0px;
+        }
+    }
+
+    .btn-class{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .row {
+        display: flex;
+        flex-direction: column !important;
+        margin: 0px !important;
+    }
+
+    [class*="col-md-*"] {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .card {
+        margin-left: 0px;
+        margin: 2px;
+    }
+
+    mat-table {
+        overflow-x: auto;
+    }
+
+    mat-header-cell,
+    mat-cell {
+        min-width: 150px;
+    }
+
+    mat-sidenav {
+        width: 80% !important;
+    }
+
+    mat-sidenav-content {
+        .container {
+            margin: 0px;
+        }
+    }
+
+    .btn-class{
+        display: block;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+button {
+    font-family: 'Akaya Telivigala', cursive, Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+label {
+    font-size: 16px;
+}
+
+
+mat-header-cell {
+    font-family: 'Akaya Telivigala', cursive !important;
+    font-size: 16px !important;
+    color: #404040 !important;
+}
+
+.mat-paginator-page-size-label {
+    font-family: 'Akaya Telivigala', cursive !important;
+    font-size: 14px !important;
+    color: #404040 !important;
+}

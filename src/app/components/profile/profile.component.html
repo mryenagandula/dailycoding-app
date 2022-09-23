@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="col-md-10">
+        <h1>My Profile</h1>
+        <form action="" class="form" [formGroup]="profileForm">
+            <div class="row mt-4">
+                <label class="label col-md-3" for="userId">User Id:</label>
+                <input type="text" id="userId" class="form-control form-control-sm col-md-6"
+                    formControlName="userId">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="firstName">First Name:</label>
+                <input type="text" id="firstName" class="form-control form-control-sm col-md-6"
+                    formControlName="firstName">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="middleName">Middle Name:</label>
+                <input type="text" id="middleName" class="form-control form-control-sm col-md-6"
+                    formControlName="middleName">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="secondName">Second Name:</label>
+                <input type="text" id="secondName" class="form-control form-control-sm col-md-6"
+                    formControlName="secondName">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="userName">User Name:</label>
+                <input type="text" id="userName" class="form-control form-control-sm col-md-6"
+                    formControlName="userName">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="email">Email:</label>
+                <input type="text" id="email" class="form-control form-control-sm col-md-6" formControlName="email">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="dob">DOB:</label>
+                <input type="text" id="dob" class="form-control form-control-sm col-md-6" formControlName="dob">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="gender">Gender:</label>
+                <mat-radio-group  formControlName="gender">
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button class="ml-2" value="Female">Female</mat-radio-button>
+                    <mat-radio-button class="ml-2"value="Others">Others</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="mobile">Mobile:</label>
+                <input type="text" id="mobile" class="form-control form-control-sm col-md-6" formControlName="mobile">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="mobile">Bio:</label>
+                <textarea name=""cols="30" rows="10" type="text" name="" id="" cols="30" rows="5" id="bio" class="form-control form-control-sm col-md-6" formControlName="bio"></textarea>
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="updatedAt">Updated At:</label>
+                <input type="text" id="updatedAt" class="form-control form-control-sm col-md-6"
+                    formControlName="updatedAt">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="createdAt">Created At:</label>
+                <input type="text" id="createdAt" class="form-control form-control-sm col-md-6"
+                    formControlName="createdAt">
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="activated">Activated:</label>
+                <mat-slide-toggle type="text"  id="activated" formControlName="activated"></mat-slide-toggle>
+            </div>
+            <div class="row mt-4">
+                <label class="label col-md-3" for="emailVerified">Email Verified:</label>
+                <mat-slide-toggle type="text" id="emailVerified"  formControlName="emailVerified"></mat-slide-toggle>
+            </div>
+        </form>
+    </div>
+</div>

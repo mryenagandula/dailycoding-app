@@ -1,0 +1,62 @@
+<div class="container-fluid" style="width: 100%;">
+    <mat-table class="table" [dataSource]="usersData?.users" >
+        <ng-container matColumnDef="firstName" >
+            <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.firstName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="secondName" >
+            <mat-header-cell *matHeaderCellDef>Second Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.secondName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="mobile" >
+            <mat-header-cell *matHeaderCellDef>Mobile</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.mobile}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="gender" >
+            <mat-header-cell *matHeaderCellDef>Gender</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.gender}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dob" >
+            <mat-header-cell *matHeaderCellDef>DOB</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.dob}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email" >
+            <mat-header-cell *matHeaderCellDef style="min-width: 250px;">Email</mat-header-cell>
+            <mat-cell *matCellDef="let element" style="min-width: 250px;">{{element.email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="hobbies">
+            <mat-header-cell *matHeaderCellDef>Hobbies</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.hobbies}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="createdAt" >
+            <mat-header-cell *matHeaderCellDef>Created At</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.createdAt | date:'short'}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email_Verified" >
+            <mat-header-cell *matHeaderCellDef>Email Verified</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.email_Verified ? "Yes" : "No"}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="activated" >
+            <mat-header-cell *matHeaderCellDef>Activated</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.activated ?  "Yes":"No"}}</mat-cell>
+        </ng-container>
+         
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row (click)="selectedRow(row)" [ngClass]="{'highlight': selectedRowIndex == row._id}" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+<mat-paginator #paginator [pageSize]="pageSize" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="true" [length]="usersData?.totalCount" (page)="handlePage($event)">
+
+</mat-paginator>
+
+<app-userdetails-side-nav *ngIf="sideNavOpen" (closeEvent)="closeSidenav()" [userInfo]="user"> </app-userdetails-side-nav>

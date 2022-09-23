@@ -1,0 +1,37 @@
+<div>
+    <button class="addBlog" routerLink="/create-blog"><span>+ </span></button>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <mat-tab-group class="col-md-8" (selectedTabChange)="tabChanged($event)" [selectedIndex]="0">
+            <mat-tab >
+                <ng-template mat-tab-label>
+                    Published 
+                    <ng-container>
+                        ({{publishedCount}})
+                    </ng-container>
+                </ng-template>
+                <ng-container *ngIf="allBlogs">
+                    <ng-container *ngFor="let blog of allBlogs?.blogs">
+                        <app-blog-details [blogDetails]="blog"></app-blog-details>
+                    </ng-container>
+                </ng-container>
+            </mat-tab>
+            <mat-tab label="Not Published">
+                <ng-template mat-tab-label>
+                    Not Published 
+                    <ng-container>
+                        ({{notPublishedCount}})
+                    </ng-container>
+                </ng-template>
+                <ng-container class="col-md-8" *ngIf="allBlogs">
+                    <ng-container *ngFor="let blog of allBlogs?.blogs">
+                        <app-blog-details [blogDetails]="blog"></app-blog-details>
+                    </ng-container>
+                </ng-container>
+            </mat-tab>
+        </mat-tab-group>
+        <div class="col-md-2"></div>
+    </div>
+</div>

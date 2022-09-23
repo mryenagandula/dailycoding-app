@@ -1,0 +1,62 @@
+h3{
+    text-align: center;
+    margin-top: 25px;
+    font-family: "Akaya Telivigala", cursive;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+//Create blog CSS
+.addBlog {
+    border-radius: 30px;
+    background-color: orangered;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    width: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    padding-bottom: 12px;
+    z-index: 200;
+  }
+
+  .addBlog:hover{
+    width: 100px;
+    background-color: white;
+    border: none;
+    color: orangered;
+  }
+  
+  .addBlog span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .addBlog span:after {
+    content: 'Blog';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .addBlog:hover span {
+    padding-right: 55px;
+  }
+  
+  .addBlog:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+//create blog CSS ends
+

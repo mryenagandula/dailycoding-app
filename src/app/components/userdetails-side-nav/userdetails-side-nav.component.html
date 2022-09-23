@@ -1,0 +1,68 @@
+<mat-sidenav-container
+    class="example-container" style="width: 100%;"  >
+    <mat-sidenav style="width: 60%;" #sidenav  disableClose opened>
+    <mat-sidenav-content opened>
+        <p (click)="close()" style="border-radius: 50%;border: solid lightgray;margin: 5px;float: right; height: 25px;width: 25px;padding-left: 5px;">x</p>
+          <form action="" class="form pl-4 mt-4" [formGroup]="form">
+            <h1>User Details </h1>
+            <div class="row mt-4">
+              <label class="col-md-3" for="userId">User Id:</label>
+              <input type="text" id="userId" formControlName="userId"class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="firstName">First Name:</label>
+              <input type="text" id="firstName" formControlName="firstName" class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="middleName">Middle Name:</label>
+              <input type="text" id="middleName" formControlName="middleName" class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="secondName">Second Name:</label>
+              <input type="text" id="secondName" formControlName="secondName"class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="userName">User Name:</label>
+              <input type="text" id="userName" formControlName="userName"class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="email">Email:</label>
+              <input type="text" id="email" formControlName="email"class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="dob">DOB:</label>
+              <input type="text" id="dob" formControlName="dob"class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="gender">Gender:</label>
+              <mat-radio-group formControlName="gender">
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button class="ml-2" value="Female">Female</mat-radio-button>
+                <mat-radio-button class="ml-2" value="Others">Others</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="createdAt">Created At:</label>
+              <input type="text" id="createdAt" formControlName="createdAt"class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="updatedAt">Updated At:</label>
+              <input type="text" id="updatedAt" formControlName="updatedAt"class="col-md-6 form-control form-control-sm ">
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="bio">Bio:</label>
+              <textarea name="bio"cols="10" rows="5" type="text" id="bio" formControlName="bio"class="col-md-6 form-control form-control-sm "></textarea>
+              <!-- <input type="text" id="bio" formControlName="bio"class="col-md-6 form-control form-control-sm "> -->
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="activated">Activated:</label>
+              <mat-slide-toggle id="activated" formControlName="activated"></mat-slide-toggle>
+            </div>
+            <div class="row mt-4">
+              <label class="col-md-3" for="emailVerified">Email verified:</label>
+              <mat-slide-toggle id="emailVerified" formControlName="emailVerified"></mat-slide-toggle>
+            </div>
+          </form>
+    </mat-sidenav-content>
+  </mat-sidenav>
+</mat-sidenav-container>

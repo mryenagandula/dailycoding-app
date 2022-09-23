@@ -1,0 +1,96 @@
+<div class="container-fluid" style="width:100%">
+    <mat-table class="table" [dataSource]="auditData?.audits">
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef style="min-width:250px">Email</mat-header-cell>
+            <mat-cell *matCellDef="let element" style="min-width:250px">{{element?.email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="client_ip">
+            <mat-header-cell *matHeaderCellDef style="min-width:120px">Client IP</mat-header-cell>
+            <mat-cell *matCellDef="let element" style="min-width:120px">{{element?.clientIpDetails[0]?.ip}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="server_ip">
+            <mat-header-cell *matHeaderCellDef style="min-width:120px">Server IP</mat-header-cell>
+            <mat-cell *matCellDef="let element" style="min-width:120px">{{element?.serverIpDetails[0]?.ip}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="client_city">
+            <mat-header-cell *matHeaderCellDef>Client City</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.clientIpDetails[0]?.city}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="server_city">
+            <mat-header-cell *matHeaderCellDef>Server City</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.serverIpDetails[0]?.city}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="client_region">
+            <mat-header-cell *matHeaderCellDef> Client Region</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.clientIpDetails[0]?.region}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="server_region">
+            <mat-header-cell *matHeaderCellDef> Server Region</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.serverIpDetails[0]?.region}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="uri">
+            <mat-header-cell *matHeaderCellDef>URL</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.uri}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="statusCode">
+            <mat-header-cell *matHeaderCellDef style="min-width:120px">Status</mat-header-cell>
+            <mat-cell *matCellDef="let element" style="min-width:120px">
+                <div *ngIf="element.statusCode === '402'">
+                    <div style="color:red">
+                        Login Failed
+                    </div>
+                </div>
+                <div *ngIf="element.statusCode === '200'">
+                    <div style="color:green">
+                        Login Success
+                    </div>
+                </div>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="client_org">
+            <mat-header-cell *matHeaderCellDef>Client Host</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.clientIpDetails[0]?.org}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="server_org">
+            <mat-header-cell *matHeaderCellDef>Server Host</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.serverIpDetails[0]?.org}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="client_timezone">
+            <mat-header-cell *matHeaderCellDef>Client TimeZone</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.clientIpDetails[0]?.timezone}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="server_timezone">
+            <mat-header-cell *matHeaderCellDef>Server TimeZone</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element?.serverIpDetails[0]?.timezone}}</mat-cell>
+        </ng-container>
+        
+
+        <ng-container matColumnDef="createdAt">
+            <mat-header-cell *matHeaderCellDef style="min-width:120px">Created At</mat-header-cell>
+            <mat-cell *matCellDef="let element" style="min-width:120px">{{element?.createdAt | date :"short"}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row (click)="selectedRow(row)" [ngClass]="{'highlight': selectedRowIndex == row._id}"
+            *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+<mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="true"
+    [length]="auditData?.totalCount" (page)="handlePage($event)">
+
+</mat-paginator>
+<app-auditdetails-sidenav *ngIf="isSideNavOpen" [auditInfo]="auditDetails" (closeEvent)="closeSideNav()">
+</app-auditdetails-sidenav>

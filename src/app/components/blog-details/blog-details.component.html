@@ -1,0 +1,7 @@
+<div class="card" *ngIf="blogDetails" style="margin-top: 20px; padding:10px ;">
+    <img [src]="blogDetails?.featureImageUri" class="card-img-top" >
+    <div class="card-body">
+        <h5 class="card-title">{{blogDetails?.title}}</h5>
+        <p class="card-text">{{blogDetails?.description}}</p>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+.signinformbox {
+  border: 1px cadetblue solid;
+  border-radius: 8px;
+  top:70px;
+}
+
+.google {
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  border-color: rgb(47, 1, 216);
+}
+.google:hover, .facebook:hover {
+  border-radius: 18px;
+}
+h3 {
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+.heading-form {
+  font-family: "Akaya Telivigala", cursive;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+input {
+  float: right;
+  width: 350px;
+}
+label {
+  margin: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.facebook{
+    width: 220px;
+  text-align: center;
+  border-radius: 10px;
+  border-color: rgb(8, 4, 194);
+}
+
+button{
+    margin: 10px;
+}
+input{
+    margin: 2px;
+}
+
+input[type="checkbox"] {
+  float: right;
+  width: 55px;
+}
+
+h4 {
+  font-family: "Akaya Telivigala", cursive;
+  font-size: 50px;
+  margin: 50px;
+  color: rgb(34, 33, 33);
+}
+
+p, p>span {
+  font-family: "Akaya Telivigala", cursive;
+  font-size: 14px;
+}
+
+p>span:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {  
+  .signinformbox{
+    top:30px;
+    left:10px;
+    margin:5px;
+    margin-top: 30px;
+    width: 95%;
+  }
+
+  .row{
+    margin: 0px !important;
+  }
+
+  .signin-title{
+    margin-left: 0px;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    float: right;
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .signinformbox{
+    top:30px;
+    left:0px;
+    margin:5px;
+  }
+
+  .signin-title{
+    margin: 0px;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    float: right;
+    width: 280px;
+  }
+}
+
+

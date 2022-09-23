@@ -1,0 +1,159 @@
+<mat-sidenav-container class="example-container" style="width: 100%;">
+    <mat-sidenav style="width: 60%;" #sidenav disableClose opened>
+        <mat-sidenav-content opened>
+            <p (click)="close()"
+                style="border-radius: 50%;border: solid lightgray;margin: 5px;float: right; height: 25px;width: 25px;padding-left: 5px;">
+                x</p>
+            <div class="container" *ngIf="auditInfo" style="margin: 15px;">
+                <div class="row mt-4">
+                    <label class="label col-md-3">Id:    </label>
+                    <span class="col-md-6">{{auditInfo._id}} </span>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3"> Client Ip:</label>
+                    <span class="col-md-6">{{auditInfo.clientIp}}</span>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3"> Email:</label>
+                    <span class="col-md-6">{{auditInfo.email}}</span>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3">Created At:</label>
+                    <span class="col-md-6">{{auditInfo.createdAt}}</span>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3">Updated At:</label>
+                    <span class="col-md-6">{{auditInfo.updatedAt}}</span>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3">Status Message:</label>
+                    <span class="col-md-6">{{auditInfo.statusMessage}}</span>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3">Url:</label>
+                    <span class="col-md-6">{{auditInfo.uri}}</span>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3">Status Code:</label>
+                    <div class="col-md-9" *ngIf="auditInfo.statusCode =='402'">
+                        <div style="color:red" >
+                            Login Failed
+                        </div>
+                    </div>
+                    <div class="col-md-9" *ngIf="auditInfo.statusCode =='200'">
+                        <div style="color:green">
+                            Login Success
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <label class="label col-md-3">Server Ip:</label>
+                    <span class="col-md-6">{{auditInfo.serverIp}}</span>
+                </div>
+                <div class="row mt-4">
+                    <mat-accordion class="col-md-9">
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                            >
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Client Ip Details
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    <!-- {{panelOpenState ? 'open' : 'closed'}} -->
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div class="row mt-4">
+                                <label class="label col-md-3">Id:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?._id}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Ip:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.ip}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> City:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.city}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Region:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.region}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Country: </label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.country}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Location:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.loc}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Org:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.org}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Timezone:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.timezone}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Postal:</label>
+                                <span class="col-md-6">{{auditInfo.clientIpDetails[0]?.postal}}</span>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                
+                <div class="row mt-4">
+                    <mat-accordion class="col-md-9">
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                            >
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Server Ip Details
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    <!-- {{panelOpenState ? 'open' : 'closed'}} -->
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div class="row mt-4">
+                                <label class="label col-md-3">Id:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?._id}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Ip:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.ip}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> City:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.city}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Region:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.region}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Country: </label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.country}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Location:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.loc}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Org:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.org}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Timezone:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.timezone}}</span>
+                            </div>
+                            <div class="row mt-4">
+                                <label class="label col-md-3"> Postal:</label>
+                                <span class="col-md-6">{{auditInfo.serverIpDetails[0]?.postal}}</span>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav>
+</mat-sidenav-container>

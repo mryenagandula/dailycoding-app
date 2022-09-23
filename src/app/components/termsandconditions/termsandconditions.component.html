@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 style="font-size: 16px;"> Terms & Conditions</h3>
+    <p (click)="closeDialog()" class="closeIcon">x
+    </p>
+    <!-- <mat-dialog-content class="row"> -->
+        <pdf-viewer
+              [src]="pdfSrc"
+              [rotation]="0"
+              [original-size]="false"
+              [show-all]="true"
+              [fit-to-page]="false"
+              [zoom]="1.0"
+              [zoom-scale]="'page-width'"
+              [stick-to-page]="false"
+              [render-text]="true"
+              [external-link-target]="'blank'"
+              [autoresize]="true"
+              [show-borders]="false"
+              [render-text-mode]="1"
+        ></pdf-viewer>
+    <!-- </mat-dialog-content> -->
+</div>
