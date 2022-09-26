@@ -20,4 +20,7 @@ export class BlogService {
     return this.http.get(`${environment.nodeUri}/blogs/userId/${pageIndex}/${pageSize}/${published}`)
   }
 
+  createBlog(payload:any){
+    return this.http.post(`${environment.nodeUri}/blogs`,payload)
+  }
 }
