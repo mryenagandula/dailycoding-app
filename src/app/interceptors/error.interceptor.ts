@@ -18,7 +18,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       catchError((error:HttpErrorResponse)=>{
-        if(error.status === 401 || error.status === 403){
+        if((error.status === 401 || error.status === 403 ) && (!['/signup','/about-us'].includes(this.router.url))){
           localStorage.clear();
           this.router.navigate(['/signin']);
           return throwError(error)
