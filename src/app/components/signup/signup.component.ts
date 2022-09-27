@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,12 +11,23 @@ import { TermsandconditionsComponent } from '../termsandconditions/termsandcondi
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  signUpForm:any;
+  signUpForm:FormGroup;
   constructor(private formBuilder:FormBuilder,private router:Router,private service:AuthenticationService,private dialog:MatDialog) { }
 
+  // formInit(){
+  //   this.signUpForm = this.formBuilder.group({
+  //     formArray: this.formBuilder.array([
+  //       this.formBuilder.group({
+  //         hobbies: ['playing cricket']
+  //       })
+  //     ])
+  //   })
+  // }
   ngOnInit(): void {
     this.onInitSignUpForm();
   }
+
+
 
   onInitSignUpForm(){
     this.signUpForm=this.formBuilder.group({
@@ -30,9 +41,27 @@ export class SignupComponent implements OnInit {
       userName:['',[Validators.required]],
       password:['',[Validators.required]],
       bio:[''],
-      hobbies:['',[Validators.required]],
+      hobbies:this.formBuilder.array([
+        this.formBuilder.group({
+          hobby: ['',[Validators.required]]
+        })
+      ]),
       termsAndConditions:[false,[Validators.required]]
     })
+  }
+
+  get hobbies(){
+    return this.signUpForm.get('hobbies') as FormArray;
+  }
+  public addHobby(){
+    const hobby=this.formBuilder.group({
+      hobby: ['',[Validators.required]]
+    })
+    this.hobbies.push(hobby)
+  }
+
+  public removeHobby(index){
+    this.hobbies.removeAt(index);
   }
 
   onSubmitSignUpForm(){

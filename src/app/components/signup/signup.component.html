@@ -62,12 +62,23 @@
             </div>
             <div class="mb-3 row">
                 <label for="hobbies" class="col-md-3"><sup><span class="text-danger">*</span></sup>Hobbies:</label>
-                <input type="text" id="hobbies" formControlName="hobbies" class="col-md-6 form-control form-control-sm"
-                    placeholder="Enter your hobbies">
+                <div formArrayName="hobbies">
+                    <div *ngFor="let hobby of hobbies.controls; let i=index;">
+                        <div [formGroupName]="i">
+                            <input type="text" id="hobby{{i+1}}" formControlName="hobby"
+                                class="col-md-6 form-control form-control-sm" placeholder="Enter your hobby #{{i+1}}"><br>
+
+                        </div>
+                        <button class="btn btn-primary" [disabled]="hobbies.length > 4" (click)="addHobby()"> + </button>
+                        <button class="btn btn-danger" *ngIf="i>0" (click)="removeHobby(i)"> - </button>
+                    </div>
+                </div>
+                
             </div>
             <div class="mb-3 row">
-                <input type="checkbox" id="checkbox" formControlName="termsAndConditions"/>
-                <p> I agree to <span style="text-decoration:underline;color:rgb(98, 98, 245)" (click)="openDialog()">Terms & Conditions</span></p>
+                <input type="checkbox" id="checkbox" formControlName="termsAndConditions" />
+                <p> I agree to <span style="text-decoration:underline;color:rgb(98, 98, 245)"
+                        (click)="openDialog()">Terms & Conditions</span></p>
             </div>
             <div class="mb-3 row">
                 <button type="submit" class="btn btn-info" style="width: 150px;border-radius: 10px;font-weight: 400;"
@@ -76,7 +87,8 @@
                     style="width: 150px;border-radius: 10px;font-weight: 400;">Reset</button>
             </div>
             <div class="mb-3 row">
-                <h6 class="col-md-7" style="font-size: 14px;">Already have an Account? <a routerLink="/signin">Signin</a></h6>
+                <h6 class="col-md-7" style="font-size: 14px;">Already have an Account? <a
+                        routerLink="/signin">Signin</a></h6>
             </div>
             <div class="mb-3 row btn-class">
                 <button type="button" class="btn btn-light google"><svg xmlns="http://www.w3.org/2000/svg" width="16"
