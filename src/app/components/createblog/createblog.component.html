@@ -1,32 +1,33 @@
-<div class="container-fluid">
-     <h2>Create Blog</h2>
-    <form [formGroup]="form">
-        
-        <div class="form-group col-sm-6">
-            <label for="title">title:</label>
-            <input type="text" class="form-control" formControlName="title" id="title">
-            <span ></span>
+<div class="container-fluid createBlogBox">
+     <h2 style="text-align: center;">Create Blog</h2>
+    <form [formGroup]="createBlogForm">
+        <div class="form-group row">
+            <label for="title" class="col-3">title:</label>
+            <input type="text" class="form-control col-9" formControlName="title" id="title" placeholder="Enter title">
         </div>
-        <div class="form-group col-sm-6">
-            <label for="description">description:</label>
-            <textarea  class="form-control" formControlName="description" id="description"></textarea>
-            
+        <div class="form-group row">
+            <label for="description" class="col-3">description:</label>
+            <textarea  class="form-control col-9" formControlName="description" id="description" placeholder="Enter description"></textarea>
         </div>
-        <div class="form-group col-sm-6">
+        <!-- <div class="form-group row">
             <label for="featureImageUri">featureImageUri:</label>
             <input type="url" class="form-control" formControlName="featureImageUri" id="description">
+        </div> -->
+        <div class="form-group row">
+            <label for="categories" class="col-3">categories:</label>
+            <input type="text" class="form-control col-9" formControlName="categories" id="categories" placeholder="Enter categories">
         </div>
-        <div class="form-group col-sm-6">
-            <label for="categories">categories:</label>
-            <input type="text" class="form-control" formControlName="categories" id="categories">
+        <div class="form-group row">
+            <label for="tags" class="col-3">tags:</label>
+            <input type="text" class="form-control col-9" formControlName="tags" id="tags" placeholder="Enter tags">
         </div>
-        <div class="form-group col-sm-6">
-            <label for="tags">tags:</label>
-            <input type="text" class="form-control" formControlName="tags" id="tags">
+        <div class="form-group row">
+            <input type="file" style="font-family: 'Akaya Telivigala'; margin-left:20px;"
+            id="featureImageUri" name="featureImageUri" formControlName="featureImageUri" (change)="readUrl($event)">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary mr-3" (click)="onSubmit()" [disabled]="!form.valid">Submit</button>
-            <button type="submit" class="btn btn-danger mr-3"(click)="onReset()">Reset</button>
+            <button type="submit" class="btn btn-primary mr-3" (click)="onSubmit()" [disabled]="!createBlogForm.valid">Submit</button>
+            <button type="reset" class="btn btn-warning mr-3" (click)="onReset()">Reset</button>
         </div>
     </form>
 </div>
