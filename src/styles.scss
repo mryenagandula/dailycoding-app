@@ -1,8 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css"; // to use in <i> icons
-body{
-    background-color: #f2f2f2 !important;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @media screen and (max-width: 767px) {
     .row {
         width: 100%;
@@ -85,8 +83,9 @@ body {
 }
 
 body {
+    background-color: #f2f2f2 !important;
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 label,
@@ -99,7 +98,7 @@ h6,
 a,
 p,
 button {
-    font-family: 'Akaya Telivigala', cursive, Roboto, "Helvetica Neue", sans-serif !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 label {

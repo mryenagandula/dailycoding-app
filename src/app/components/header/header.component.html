@@ -1,6 +1,6 @@
 <nav class="main-navigation">
   <div class="navbar-header animated fadeInUp">
-    <a class="navbar-brand" href="#" style="font-size: 26px;">{{resource?.title}}</a>
+    <a class="navbar-brand text-primary" href="#" style="font-size: 26px;">{{resource?.title}}</a>
   </div>
   <ul class="small-device-menu nav-list">
     <li class="nav-list-item"  title="Buy Me Coffee !!!">
@@ -71,10 +71,10 @@
       <a class="nav-link" routerLink="/contact-us" [routerLinkActive]="['active']">Contact us</a>
     </li>
     <li class="nav-list-item" *ngIf="isUserLoggedIn">
-      <a class="nav-link" routerLink="/about-us" [routerLinkActive]="['active']">About us</a>
+      <a class="nav-link" routerLink="/about-us" [routerLinkActive]="['active']">ABOUT</a>
     </li>
     <li class="nav-list-item" *ngIf="!isUserLoggedIn">
-      <a class="nav-link" routerLink="/about-us" [routerLinkActive]="['active']">About us</a>
+      <a class="nav-link" routerLink="/about-us" [routerLinkActive]="['active']">ABOUT</a>
     </li>
     <li class="nav-list-item big-screen-menu" *ngIf="isUserLoggedIn" title="Buy Me Coffee !!!">
       <a class="nav-link" routerLink="/about-us" [routerLinkActive]="['active']">
@@ -116,10 +116,10 @@
       </div>
     </li>
     <li class="nav-list-item" *ngIf="!isUserLoggedIn">
-      <a class="nav-link" routerLink="/signin" [routerLinkActive]="['active']">Signin</a>
+      <a class="nav-link" routerLink="/signin" [routerLinkActive]="['active']">LOGIN</a>
     </li>
     <li class="nav-list-item" *ngIf="!isUserLoggedIn">
-      <a class="nav-link" routerLink="/signup" [routerLinkActive]="['active']">Signup</a>
+      <a class="nav-link" routerLink="/signup" [routerLinkActive]="['active']">SIGN UP</a>
     </li>
   </ul>
 </nav>
