@@ -1,3 +1,4 @@
+import { Resource } from './../../resources/resources';
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
@@ -8,6 +9,7 @@ import { AuthenticationService } from 'src/app/auth/authentication.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public resource=new Resource();
   public isAdmin="ADMIN";
   public isMenuOpen=true;
 

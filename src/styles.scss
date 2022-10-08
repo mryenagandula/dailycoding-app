@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css"; // to use in <i> icons
-
+body{
+    background-color: #f2f2f2 !important;
+}
 @media screen and (max-width: 767px) {
     .row {
         width: 100%;

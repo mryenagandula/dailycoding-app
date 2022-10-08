@@ -14,9 +14,10 @@
 
 .card {
   position: relative;
-  
   width: 550px;
-  height: 350px;
+    height: 369px;
+    /* margin-bottom: 4px; */
+    margin-top: -5px;
   overflow: hidden;
   margin-left: 50px;
 
@@ -114,4 +115,20 @@
     width: 100%;
     height: auto;
   }
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 500;
+}
+.title{
+  position: relative;
+  bottom: 185px;
+  z-index: 6;
+  left: 220px;
+  font-size: 18px;
+  
+}
+img{
+  opacity: 0.8;
 }
