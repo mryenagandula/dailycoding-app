@@ -1,3 +1,5 @@
+import { CategoriesAndTagsComponent } from './components/categories-and-tags/categories-and-tags.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -40,7 +42,7 @@ import { TermsandconditionsComponent } from './components/termsandconditions/ter
 import { SettingsComponent } from './components/settings/settings.component';
 import { CreateblogComponent } from './components/createblog/createblog.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     AuditdetailsSidenavComponent,
     TermsandconditionsComponent,
     SettingsComponent,
-    CreateblogComponent
+    CreateblogComponent,
+    CategoriesAndTagsComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
-    PdfViewerModule
+    PdfViewerModule,
+    MatSnackBarModule
+    
   ],
   providers: [
     DatePipe,

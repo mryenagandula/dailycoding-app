@@ -52,11 +52,11 @@
     <li class="nav-list-item" *ngIf="isUserLoggedIn">
       <a class="nav-link" routerLink="/blogs" [routerLinkActive]="['active']">My Blogs</a>
     </li>
-    <li class="nav-list-item dropdown big-screen-menu" *ngIf="isUserLoggedIn">
+    <!-- <li class="nav-list-item dropdown big-screen-menu" *ngIf="isUserLoggedIn">
       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Notifications</a>
       <div class="dropdown-menu">
       </div>
-    </li>
+    </li> -->
     <ng-container *ngIf="isUserLoggedIn">
       <li class="nav-list-item" *appAdminDirective="isAdmin" >
         <a class="nav-link" routerLink="/users" [routerLinkActive]="['active']">Users</a>
@@ -69,6 +69,9 @@
     </ng-container>
     <li class="nav-list-item" *ngIf="isUserLoggedIn">
       <a class="nav-link" routerLink="/contact-us" [routerLinkActive]="['active']">Contact us</a>
+    </li>
+    <li class="nav-list-item" *ngIf="isUserLoggedIn">
+      <a class="nav-link" routerLink="/categoriesAndTags" [routerLinkActive]="['active']">Categories And Tags</a>
     </li>
     <li class="nav-list-item" *ngIf="isUserLoggedIn">
       <a class="nav-link" routerLink="/about-us" [routerLinkActive]="['active']">ABOUT</a>

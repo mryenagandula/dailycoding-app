@@ -1,0 +1,69 @@
+
+<div class="container">
+    <mat-tab-group>
+        <mat-tab label="Create Categories">
+            <form [formGroup]="categoryForm" (ngSubmit)="saveCategory()">
+                <div class="card mt-3 w-50">
+                    <div class="card-header bg-primary text-white">
+                      <h1 class="text-center">Create Categories</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="title">Title</label>
+                                 <input type="text" name="title" id="title" class="form-control"
+                                 formControlName="title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="description">Description</label>
+                                 <input type="text" name="description" id="description" class="form-control"  formControlName="description">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="col-md">
+                          <button type="submit"
+                          [disabled]="categoryForm.invalid"
+                          class="btn btn-primary w-100">Create</button>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+        <mat-tab label="Create Tags">
+            <form [formGroup]="tagForm" (ngSubmit)="saveTag()">
+                <div class="card mt-3 w-50">
+                    <div class="card-header bg-primary text-white">
+                      <h1 class="text-center">Create Tags</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="title">Title</label>
+                                 <input type="text" name="title" id="title" class="form-control"
+                                 formControlName="title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="description">Description</label>
+                                 <input type="text" name="description" id="description" class="form-control"  formControlName="description">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="col-md">
+                          <button type="submit" class="btn btn-primary w-100"
+                          [disabled]="tagForm.invalid">Create</button>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+       
+      </mat-tab-group>
+</div>
+
+
