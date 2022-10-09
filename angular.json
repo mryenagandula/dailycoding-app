@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "Letstalk"
+  "defaultProject": "Letstalk",
+  "cli": {
+    "analytics": false
+  }
 }

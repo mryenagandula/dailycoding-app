@@ -1,3 +1,4 @@
+import { CategoriesAndTagsComponent } from './components/categories-and-tags/categories-and-tags.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
@@ -40,6 +41,11 @@ const routes: Routes = [
     path:'blogs',
     canActivate:[AuthguardGuard],
     component:BlogsComponent
+  },
+  {
+    path:'categoriesAndTags',
+    canActivate:[AuthguardGuard],
+    component:CategoriesAndTagsComponent
   },
   {
     path:'create-blog',

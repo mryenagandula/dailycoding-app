@@ -3,6 +3,10 @@ body {
     padding: 0;
 }
 
+nav{
+  background-color: white;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
 a.navbar-brand {
     float: left;
     height: 50px;
@@ -10,14 +14,14 @@ a.navbar-brand {
     // font-size: 50px;
     line-height: 20px;
     text-decoration: none;
-    color: orangered;
-    font-family: cursive;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
+   
 }
 
 li > a.active{
-    color: orangered !important;
+    color:#007bff !important;
 }
 
 nav.main-navigation {
@@ -44,12 +48,12 @@ nav.main-navigation ul.nav-list {
 a.nav-link {
     text-decoration: none;
     font-size: 18px;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     cursor: pointer;
     position: relative;
     color: #404040;
-    font-family: 'Akaya Telivigala', cursive;
+    font-family: 'Poppins', sans-serif;
 }
 
 @keyframes FadeIn {
